@@ -7,7 +7,34 @@ import Loading from './Loading'
 import Product from './Product'
 
 const FeaturedProducts = () => {
-  return <h4>featured products</h4>
+  const { 
+    products_loading: loading,
+    products_error: error,
+    featured_products: featured,
+  } = useProductsContext()
+  if(loading) {
+    return <Loading />
+  }
+  if(error) {
+    return <Error />
+  }
+  return (
+    <Wrapper className='section'>
+      <div className='title'>
+        <h2>Productos Destacados</h2>
+        <div className='underline'></div>
+      </div>
+      <div className='section-center featured'>
+        {featured.map((product) => {
+// product component (single product) pass id as dinamyc parameter
+          return <Product key={product.id} {...product} />
+        })}
+      </div>
+      <Link to='/products' className='btn'>
+        Todos los Productos
+      </Link>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -28,7 +55,7 @@ const Wrapper = styled.section`
   }
   @media (min-width: 576px) {
     .featured {
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
   }
 `

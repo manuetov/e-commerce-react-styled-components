@@ -19,7 +19,10 @@ const initialState = {
   products_loading: false,
   products_error: false,
   products: [],
-  featured_products: []
+  featured_products: [],
+  single_product_loading: false,
+  single_product_error: false,
+  single_product: {}, 
 }
 
 // create de context
@@ -41,22 +44,33 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: GET_PRODUCTS_BEGIN })
     try {
       const response = await axios.get(url)
-      const products = await response.data
-      console.log(products);
+      const products = response.data
+      // console.log(products);
       // all the products we'll pass into the payload
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products })
     } catch (error) {
-      dispatch({ type: GET_SINGLE_PRODUCT_ERROR })
+      dispatch({ type: GET_PRODUCTS_ERROR })
     }
   }
 
+  const getSingleProduct = async (url) => {
+    dispatch({ type: GET_SINGLE_PRODUCT_BEGIN })
+    try {
+      const res = await axios.get(url)
+      const singleProduct = res.data
+      // console.log(singleProduct)
+      dispatch ({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct})
+    } catch (error) {
+      dispatch ({ type: GET_SINGLE_PRODUCT_ERROR })
+    }
+  }
   useEffect(() => {
     getProducts(url)
   }, [])
 
   return (
     <ProductsContext.Provider value={
-      {...state, openSidebar, closeSidebar} }>
+      {...state, openSidebar, closeSidebar, getSingleProduct} }>
         {children}
     </ProductsContext.Provider>
   )

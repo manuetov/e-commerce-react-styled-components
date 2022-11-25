@@ -4,14 +4,30 @@ import { formatPrice } from '../utils/helpers'
 import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
-const Product = () => {
-  return <h4>product</h4>
+// came from FeaturedProducts
+const Product = ({ image, name, price, id }) => {
+  return (
+    <Wrapper>
+      <div className='container'>
+        <img src={image} alt={name} />
+        {/* app.js route/:id single product */}
+        <Link to={`/products/${id}`} className='link'>
+          <FaSearch />
+        </Link>
+      </div>
+      <footer>
+        <h5>{name}</h5>
+        {/* object Intl.NumberFormat enable numeric format agree with our own language.  */}
+        <p>{formatPrice(price)}</p>
+      </footer>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.article`
   .container {
     position: relative;
-    background: var(--clr-black);
+    /* background: var(--clr-black); */
     border-radius: var(--radius);
   }
   img {
