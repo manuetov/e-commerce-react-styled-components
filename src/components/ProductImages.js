@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 // initialy is undefine. And avoid error should be an array with one object with the url property
-const ProductImages = ({ images = [{url:''}] }) => {
+const ProductImages = ({ images = [{ url: '' }] }) => {
   const [main, setMain] = useState(images[0])
   return (
     <Wrapper>
       <img src={main.url} alt='main' className='main' />
+      {console.log(main.url)}
       <div className='gallery'>
         {images.map((image, index) => {
           return (
@@ -17,8 +18,8 @@ const ProductImages = ({ images = [{url:''}] }) => {
               onClick={() => setMain(images[index])}
               className={`${image.url === main.url ? 'active' : null}`}
             />
-          )
-        })}
+              )
+            })}
       </div>
     </Wrapper>
   )
