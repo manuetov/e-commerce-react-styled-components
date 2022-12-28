@@ -100,14 +100,14 @@ return (
     {/* message  */}
     {succeeded ? (
       <article>
-        <h4>Thank you</h4>
-        <h4>Your payment was successful!</h4>
-        <h4>Redirecting to home page shortly</h4>
+        <h4>Gracias</h4>
+        <h4>El pago se realizó correctamente!</h4>
+        <h4>Redireccionando a la home </h4>
       </article>
     ) : (
       <article>
-        <h4>Hello, {myUser && myUser.name}</h4>
-        <p>Your total is {formatPrice(shipping_fee + total_amount)}</p>
+        <h4>Hola, {myUser && myUser.name}</h4>
+        <p>El total es {formatPrice(shipping_fee + total_amount)}</p>
         <p>Test Card Number : 4242 4242 4242 4242</p>
       </article>
     )}
@@ -120,7 +120,7 @@ return (
       />
       <button disabled={processing || disabled || succeeded} id='submit'>
         <span id='button-text'>
-          {processing ? <div className='spinner' id='spinnier'></div> : 'Pay'}
+          {processing ? <div className='spinner' id='spinnier'> </div> : 'Pay'}
         </span>
       </button>
       {/* Show any error that happens when processing the payment */}
@@ -249,7 +249,7 @@ const Wrapper = styled.section`
   .spinner:before,
   .spinner:after {
     position: absolute;
-    content: "";
+    content: '';
   }
   .spinner:before {
     width: 10.4px;
@@ -290,6 +290,21 @@ const Wrapper = styled.section`
       width: 80vw;
     }
   }
-`;
+  @media only screen and (max-width: 600px) {
+    form {
+      width: 80vw;
+    }
+  }
+  @media only screen and (min-width: 600px) and (max-width:800px) {
+    form {
+      width: 65vw;
+    }
+  }
+  @media only screen and (min-width: 800px) and (max-width:2000px) {
+    form {
+      width: 50vw;
+    }
+  }
+`
 
 export default StripeCheckout;

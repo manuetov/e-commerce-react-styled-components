@@ -1,3 +1,4 @@
+// serverless funtion to secure the data
 // domain/.netlify/functions/create-payment-intent
 // use Netlity CLI instead my own server or heroku or digital ocean etc..
 require("dotenv").config();

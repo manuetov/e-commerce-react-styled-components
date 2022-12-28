@@ -1,32 +1,34 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import heroBcg from '../assets/hero-bcg.jpeg'
-import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+// import heroBcg from "../assets/heroBcg.jpg";
+// import heroBcg2 from "../assets/heroBcg2.jpg";
+import heroBcg from "../assets/hero-bcg.svg"
+
 
 const Hero = () => {
   return (
-    <Wrapper className='section-center'>
-      <article className='content'>
+    <Wrapper className="section-center">
+      <article className="content">
         <h1>
-          Diseña tu <br />
-          zona de confort
+          Disfruta de tus <br />
+          complementos tecnologicos
         </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure
           quasi odit tenetur unde officiis repudiandae quod deserunt quia eum?
         </p>
-        <Link to='/products' className='btn hero-btn'>
+        <Link to="/products" className="btn hero-btn">
           Comprar ahora
         </Link>
       </article>
-      <article className='img-container'>
-        <img src={heroBcg} alt='nice table' className='main-img' />
-        <img src={heroBcg2} alt='person working' className='accent-img' />
+      <article className="img-container">
+        <img src={heroBcg} alt="apple gadget" className="main-img" />
+        {/* <img src={heroBcg2} alt="apple gadget" className="accent-img" /> */}
       </article>
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.section`
   min-height: 60vh;
@@ -71,23 +73,22 @@ const Wrapper = styled.section`
     }
     .accent-img {
       position: absolute;
-      bottom: 0;
+      top: 70px;
       left: 0;
       width: 250px;
       transform: translateX(-50%);
       border-radius: var(--radius);
     }
     .img-container::before {
-      content: '';
+      content: "";
       position: absolute;
-      width: 10%;
-      height: 80%;
+      width: 100%;
+      height: 100%;
       background: var(--clr-primary-9);
-      bottom: 0%;
-      left: -8%;
-      border-radius: var(--radius);
+      bottom: 0;
+      border-radius: 50px;
     }
   }
-`
+`;
 
-export default Hero
+export default Hero;
