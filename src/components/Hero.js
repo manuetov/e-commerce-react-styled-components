@@ -11,12 +11,14 @@ const Hero = () => {
     <Wrapper className="section-center">
       <article className="content">
         <h1>
-          Disfruta de tus <br />
+          Explora y disfruta de tus <br />
           complementos tecnologicos
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure
-          quasi odit tenetur unde officiis repudiandae quod deserunt quia eum?
+        Estos artículos, que te recomendamos a continuación,
+         harán más fácil tu día a día. Seleccionamos las mejores
+         ofertas para poder conseguirlos a un precio más reducido 
+         de lo habitual.
         </p>
         <Link to="/products" className="btn hero-btn">
           Comprar ahora
@@ -51,6 +53,8 @@ const Wrapper = styled.section`
     gap: 8rem;
     h1 {
       margin-bottom: 2rem;
+      text-align: center;
+      text-shadow: 0 1;
     }
     p {
       font-size: 1.25rem;

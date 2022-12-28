@@ -122,7 +122,7 @@ const Filters = () => {
           {/* end of colors */}
           {/* price */}
           <div className='form-control'>
-            <h5>preio</h5>
+            <h5>precio</h5>
             <p className='price'>{formatPrice(price)}</p>
             <input
               type='range'
@@ -186,7 +186,11 @@ const Wrapper = styled.section`
     color: var(--clr-grey-5);
     cursor: pointer;
   }
+  .null{
+    font-size:1rem;
+  }
   .active {
+    font-size:1.4rem;
     border-color: var(--clr-grey-5);
   }
   .company {
@@ -223,11 +227,13 @@ const Wrapper = styled.section`
     justify-content: center;
     margin-right: 0.5rem;
     opacity: 0.5;
+    font-size:1.2rem;
   }
   .active {
     opacity: 1;
   }
   .all-btn .active {
+    font-size: 2rem;
     text-decoration: underline;
   }
   .price {
@@ -239,7 +245,7 @@ const Wrapper = styled.section`
     align-items: center;
     text-transform: capitalize;
     column-gap: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     max-width: 200px;
   }
   .clear-btn {
@@ -247,6 +253,7 @@ const Wrapper = styled.section`
     color: var(--clr-white);
     padding: 0.25rem 0.5rem;
     border-radius: var(--radius);
+    font-size:1.2rem;
   }
   @media (min-width: 768px) {
     .content {

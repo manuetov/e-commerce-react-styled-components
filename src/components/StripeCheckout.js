@@ -99,7 +99,7 @@ return (
   <div>
     {/* message  */}
     {succeeded ? (
-      <article>
+      <article className="success-message">
         <h4>Gracias</h4>
         <h4>El pago se realizó correctamente!</h4>
         <h4>Redireccionando a la home </h4>
@@ -153,6 +153,9 @@ const StripeCheckout = () => {
 };
 
 const Wrapper = styled.section`
+  .success-message{
+    text-align: center;
+  }
   form {
     width: 30vw;
     align-self: center;

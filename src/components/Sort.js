@@ -102,12 +102,12 @@ const Wrapper = styled.section`
       color: var(--clr-white);
     }
   }
-
   .sort-input {
     border-color: transparent;
     font-size: 1rem;
     text-transform: capitalize;
     padding: 0.25rem 0.5rem;
+    margin-left: 3px;
   }
   label {
     font-size: 1rem;
