@@ -255,10 +255,22 @@ const Wrapper = styled.section`
     border-radius: var(--radius);
     font-size:1.2rem;
   }
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .content {
-      position: sticky;
+      position: sticky; 
       top: 1rem;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 2fr 1fr ;
+      grid-template-rows: 220px 200px ;
+    }
+    form .colors {
+      flex-direction:column;
+      align-items: flex-start;
+    }
+    .search-input{
+      width: 80%;
     }
   }
 `

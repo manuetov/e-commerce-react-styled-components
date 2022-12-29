@@ -39,7 +39,6 @@ const Wrapper = styled.section`
   .img-container {
     display: none;
   }
-
   p {
     line-height: 2;
     max-width: 45em;
@@ -47,7 +46,12 @@ const Wrapper = styled.section`
     color: var(--clr-grey-5);
     font-size: 1rem;
   }
-  @media (min-width: 992px) {
+  @media screen and (max-width:500px){
+    h1 {
+      font-size: 2.2rem;
+    }
+  }
+  @media (min-width: 1024px) {
     height: calc(100vh - 5rem);
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
